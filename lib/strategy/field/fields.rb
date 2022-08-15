@@ -47,6 +47,7 @@ require 'strategy/field/email/gmail_template'
 require 'strategy/field/email/random_mailinator_email'
 
 # name
+require 'strategy/field/name/random_prefix'
 require 'strategy/field/name/random_first_name'
 require 'strategy/field/name/random_last_name'
 require 'strategy/field/name/random_full_name'
