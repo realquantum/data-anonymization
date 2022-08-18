@@ -19,14 +19,18 @@ module DataAnon
 
         def anonymize field
 
-          name_words = field.value.split(' ')
+          name_words = field.value.split(/\s+/)
 
           anonymized_first_name = @first_name_anonymizer.anonymize(field)
+          anonymized_first_name = anonymized_first_name[0] if anonymized_first_name.is_a? Array
           anonymized_last_name = ""
-          for counter in (1..name_words.size-1)
-            anonymized_last_name = anonymized_last_name + " " + @last_name_anonymizer.anonymize(field)
+          counter = 1
+          while counter < name_words.length
+            counter += 1
+            name = @last_name_anonymizer.anonymize(field)
+            name = name[0] if name.is_a? Array
+            anonymized_last_name = anonymized_last_name + " " + name
           end
-
           return anonymized_first_name + anonymized_last_name
 
         end

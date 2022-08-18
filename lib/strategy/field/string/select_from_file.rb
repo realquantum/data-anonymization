@@ -11,7 +11,7 @@ module DataAnon
       class SelectFromFile
 
         def initialize file_path
-          @values = File.read(file_path).split
+          @values = File.read(file_path).split(/\r\n|\r|\n/)
         end
 
         def anonymize field

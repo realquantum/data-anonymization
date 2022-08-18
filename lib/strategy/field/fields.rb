@@ -8,6 +8,7 @@ require 'strategy/field/anonymize_array'
 
 # string
 require 'strategy/field/string/lorem_ipsum'
+require 'strategy/field/string/lorem_ipsum_html'
 require 'strategy/field/string/string_template'
 require 'strategy/field/string/random_string'
 require 'strategy/field/string/random_url'
@@ -24,6 +25,7 @@ require 'strategy/field/number/random_float'
 require 'strategy/field/number/random_integer_delta'
 require 'strategy/field/number/random_float_delta'
 require 'strategy/field/number/random_big_decimal_delta'
+require 'strategy/field/number/random_ip_address'
 
 # contact
 require 'strategy/field/contact/geojson_base'

@@ -28,4 +28,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('rgeo-geojson', '~> 2.1')
   gem.add_dependency('faker', '~> 2.2.0')
   gem.add_dependency('thor', '~> 1.1')
+  gem.add_dependency('nokogiri', '~> 1.8.5')
 end
