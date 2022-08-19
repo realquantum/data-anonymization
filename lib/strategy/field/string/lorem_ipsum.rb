@@ -29,8 +29,7 @@ Sed at iaculis risus. Nulla aliquet vulputate nulla, nec euismod sem porta quis.
         end
 
         def anonymize field
-          # @text[0, field.value.length]
-          Faker::Lorem.paragraph_by_chars(number: field.value.length)
+          Faker::Lorem.paragraph_by_chars(number: field.value.length) if field and field.value != nil
         end
 
       end
