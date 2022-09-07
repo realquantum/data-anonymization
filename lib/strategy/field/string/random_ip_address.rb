@@ -9,7 +9,7 @@ module DataAnon
       #    !!!ruby
       #    anonymize('Age').using FieldStrategy::RandomIpAddress.new
 
-      class RandomIpAddresss
+      class RandomIpAddress
 
         def initialize
         end

@@ -18,6 +18,7 @@ require 'strategy/field/string/random_formatted_string'
 require 'strategy/field/string/select_from_file'
 require 'strategy/field/string/select_from_list'
 require 'strategy/field/string/select_from_database'
+require 'strategy/field/string/random_ip_address'
 
 # number
 require 'strategy/field/number/random_integer'
@@ -25,7 +26,6 @@ require 'strategy/field/number/random_float'
 require 'strategy/field/number/random_integer_delta'
 require 'strategy/field/number/random_float_delta'
 require 'strategy/field/number/random_big_decimal_delta'
-require 'strategy/field/number/random_ip_address'
 
 # contact
 require 'strategy/field/contact/geojson_base'

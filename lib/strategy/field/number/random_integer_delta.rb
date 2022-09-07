@@ -15,8 +15,10 @@ module DataAnon
 
         def anonymize field
           adjustment = DataAnon::Utils::RandomInt.generate(-@delta,@delta)
+          value = field.value
           value = field.value.first if field.value.is_a? Array
           value = value.to_i if field.value.is_a? String
+          value = 0 if value == nil
           return value + adjustment
         end
       end
