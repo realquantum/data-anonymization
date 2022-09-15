@@ -10,8 +10,16 @@ module DataAnon
       end
 
       def log_error record, exception
+        if exception.to_s =~ /NotNullViolation/
+          record.delete
+          return
+        end
         @errors << { :record => record, :exception => exception}
-        raise 'Reached limit of error for a table' if @errors.length > 100
+        if @errors.length > 1
+          p ["ERRORS", @errors]
+          raise 'Reached limit of error for a table' 
+          exit
+        end
       end
 
       def errors

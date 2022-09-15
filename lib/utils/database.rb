@@ -27,6 +27,7 @@ module DataAnon
         klass_name = table_name.to_s.downcase.capitalize
         return database.const_get(klass_name, false) if database.const_defined?(klass_name, false)
         database.const_set(klass_name, Class.new(database) do
+          p ["Primary keys", primary_keys]
             self.table_name = table_name
             self.primary_keys = primary_keys if primary_keys.length > 1
             self.primary_key = primary_keys[0] if primary_keys.length == 1
