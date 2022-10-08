@@ -49,7 +49,11 @@ module DataAnon
             nok.xpath('.//img').each do |x|
               if x.attr('width') and x.attr('height')
                 # STDERR.puts "3" if $should_print == true
-                x.set_attribute('src', Faker::LoremFlickr.image(size: "#{x.attr('width')}x#{x.attr('height')}", search_terms: ['building']))
+                width  = x.attr('width')
+                height = x.attr('height')
+                width  = 60 if width.to_i < 2
+                height = 60 if height.to_i < 2
+                x.set_attribute('src', Faker::LoremFlickr.image(size: "#{width}x#{height}", search_terms: ['building']))
               else
                 # STDERR.puts "4" if $should_print == true
                 x.set_attribute('src', Faker::LoremFlickr.image(search_terms: ['building']))
